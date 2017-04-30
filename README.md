@@ -6,6 +6,8 @@ These cards are editable and can be drag and dropped from one to another list.
 We can mark status on each card as done/ not done.
 Task status is reflected on the card to show if its completed or pending.
 
+![Alt text](app/img/sample-image.png?raw=true "Optional Title")
+
 ```
 ### Following features are implemented in this project
 
