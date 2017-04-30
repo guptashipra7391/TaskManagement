@@ -6,7 +6,7 @@ These cards are editable and can be drag and dropped from one to another list.
 We can mark status on each card as done/ not done.
 Task status is reflected on the card to show if its completed or pending.
 
-![App Preview](sample-image.png?raw=true)
+[![App Preview](https://github.com/guptashipra7391/TaskManagement/blob/master/sample-image.png?raw=true)]
 
 ```
 ### Following features are implemented in this project
