@@ -1,0 +1,15 @@
+{
+  "name": "TaskManagement",
+  "version": "0.0.1",
+  "description": "Task management system which can include multiple task list with drag and doppable task cards.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guptashipra7391/TaskManagement.git"
+  },
+  "author": "guptashipra7391",
+  "license": "MIT",
+  "homepage": "http://angular-dragdrop.github.io/angular-dragdrop",
+  "devDependencies": {
+  }
+}

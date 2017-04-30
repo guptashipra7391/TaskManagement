@@ -23,15 +23,13 @@ Task status is reflected on the card to show if its completed or pending.
 
 6) Data persist after refreshing the page.
 
-```
+
 
 ### Installation
 
 1. Clone or download the project.
-2. Run index file.
-
-
-
+2. Run index file in local web server or
+   run http-server command in terminal this will provide the link,cut and paste the link in web browser.
 
 
 
