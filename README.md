@@ -2,7 +2,7 @@
 
 ```
 A project that helps us to easily maintain a bunch of titled Task List in which we can include various editable task cards. 
-These cards are editable and can be drag and dropped from one to another list.
+These cards can be edited,dragged and dropped from one to another list.
 We can mark status on each card as done/ not done.
 Task status is reflected on the card to show if its completed or pending.
 ```
