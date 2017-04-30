@@ -1,0 +1,162 @@
+<div class="container panel">
+    <div class="row">
+        <h2 class="col-lg-12">Task Manager</h2>
+    </div>
+    <div class="row">
+        <!--Add List Button-->
+        <button class="task-button" ng-click="addList()"><i class="fa fa-plus"></i>Add List</button>
+    </div>
+    <div class="row">
+        <h3 class="col-lg-12">Lists</h3>
+    </div>
+    <section class="row">
+        <!--this code will iterate through all the list and display them-->
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="list in myDashboard.listArray">
+            <div class="listBox"  ui-on-Drop="onDrop($event,$data,list)">
+
+                <!--This input field shows the title of the list which can be changed-->
+                <md-input-container style="margin-bottom: 5px;width: 80%">
+                    <label>List Title</label>
+                    <input ng-model="list.title" placeholder="Enter title" ng-change="list.editList(list.title)"
+                           ng-blur="list.editList(list.title||'untitled')">
+                </md-input-container>
+
+                <!--this trash button can delete the list-->
+                <i class="fa fa-trash-o" style="float: right" title="Delete List"
+                   ng-click="myDashboard.removeList(list.id)"></i> <br>
+
+                <!--link to add card to the list-->
+                <a ng-click="openAddCardPopup(list)" style="display: inline-block;cursor:pointer"><i
+                        class="fa fa-plus-circle"></i>Add Card</a>
+
+                <!--following code will iterate through all the cards and display them-->
+                <div class="cardBox" ng-repeat="c in list.cards" ng-init="showCard[c.id]=false" ui-draggable="true"
+                     drag="c"
+                     on-drop-success="dropSuccessHandler($event,$index,list)">
+
+                    <!--this will show the list current status-->
+                    <i class="fa"  ng-class="c.status=='Done'?'fa-check':'fa-clock-o'"
+                       title="{{c.status}}"></i>
+                    {{c.description}}
+
+                    <!--button to delete the card-->
+                    <i class="fa fa-trash-o" style="float: right" title="Delete Card"
+                       ng-click="list.removeCard(c.id)"></i>
+
+                    <!--button to edit the card info-->
+                    <i class="fa" style="float: right" title="Edit Card"
+                       ng-class="showCard[c.id]?'fa-times':'fa-pencil'"
+                       ng-click="showEdit(c)"></i>
+
+                    <!--edit card form-->
+                    <div ng-show="showCard[c.id]">
+                        <form name="saveCardForm"
+                              ng-submit="submit=true;cardForm.$valid&&c.editCard(newCard);showCard[c.id]=false">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <md-input-container style="margin-bottom: 5px">
+                                        <label>Username</label>
+                                        <input type="text" ng-model="newCard.userName" name="username">
+                                    </md-input-container>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <md-input-container style="margin-bottom: 5px">
+                                        <label>Description</label>
+                                        <textarea ng-model="newCard.description" name="description"></textarea>
+                                    </md-input-container>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <md-input-container style="margin-bottom: 5px">
+                                        <md-select ng-model="newCard.status" placeholder="Select Status" name="status">
+                                            <md-option ng-value="'Done'">Done</md-option>
+                                            <md-option ng-value="'Not Done'">Not Done</md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+
+                            </div>
+
+
+                            <div style="text-align: center;">
+                                <button class="task-button" type="submit">SAVE</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- Modal To create a new card-->
+<div id="addCardModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="max-width: 500px;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #fe8200;border-top-left-radius: 5px;border-top-right-radius: 5px;color: #fff">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Please enter card details</h4>
+            </div>
+            <div class="modal-body">
+                <form name="cardForm" ng-submit="submit=true;cardForm.$valid&&submitCard(newCard)">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <md-input-container>
+                                <label>Username</label>
+                                <input type="text" ng-model="newCard.name" name="username">
+                                <div ng-messages="cardForm.username.$error" ng-show="cardForm.username.$touched">
+                                    <div ng-message="required">This field is required</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <md-input-container>
+                                <label>Description</label>
+                                <textarea ng-model="newCard.description" name="description"></textarea>
+                                <div ng-messages="cardForm.description.$error" ng-show="cardForm.description.$touched">
+                                    <div ng-message="required">This field is required</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <md-input-container>
+                                <md-select ng-model="newCard.status" placeholder="Select Status" name="status">
+                                    <md-option ng-value="'Done'">Done</md-option>
+                                    <md-option ng-value="'Not Done'">Not Done</md-option>
+                                </md-select>
+                                <div ng-messages="cardForm.status.$error" ng-show="cardForm.status.$touched">
+                                    <div ng-message="required">This field is required</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+
+                    </div>
+
+
+                    <div style="text-align: center;">
+                        <button class="task-button" type="submit">ADD CARD</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>

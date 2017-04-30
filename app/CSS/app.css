@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'LatoBlack';
+    src: url('fonts/Lato-Black.eot');
+    src: url('fonts/Lato-Black.eot') format('embedded-opentype'),
+    url('fonts/Lato-Black.woff2') format('woff2'),
+    url('fonts/Lato-Black.woff') format('woff'),
+    url('fonts/Lato-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LatoBold';
+    src: url('fonts/Lato-Bold.eot');
+    src: url('fonts/Lato-Bold.eot') format('embedded-opentype'),
+    url('fonts/Lato-Bold.woff2') format('woff2'),
+    url('fonts/Lato-Bold.woff') format('woff'),
+    url('fonts/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LatoHeavy';
+    src: url('fonts/Lato-Heavy.eot');
+    src: url('fonts/Lato-Heavy.eot') format('embedded-opentype'),
+    url('fonts/Lato-Heavy.woff2') format('woff2'),
+    url('fonts/Lato-Heavy.woff') format('woff'),
+    url('fonts/Lato-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LatoLight';
+    src: url('fonts/Lato-Light.eot');
+    src: url('fonts/Lato-Light.eot') format('embedded-opentype'),
+    url('fonts/Lato-Light.woff2') format('woff2'),
+    url('fonts/Lato-Light.woff') format('woff'),
+    url('fonts/Lato-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LatoMedium';
+    src: url('fonts/Lato-Medium.eot');
+    src: url('fonts/Lato-Medium.eot') format('embedded-opentype'),
+    url('fonts/Lato-Medium.woff2') format('woff2'),
+    url('fonts/Lato-Medium.woff') format('woff'),
+    url('fonts/Lato-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LatoRegular';
+    src: url('fonts/Lato-Regular.eot');
+    src: url('fonts/Lato-Regular.eot') format('embedded-opentype'),
+    url('fonts/Lato-Regular.woff2') format('woff2'),
+    url('fonts/Lato-Regular.woff') format('woff'),
+    url('fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LatoSemibold';
+    src: url('fonts/Lato-Semibold.eot');
+    src: url('fonts/Lato-Semibold.eot') format('embedded-opentype'),
+    url('fonts/Lato-Semibold.woff2') format('woff2'),
+    url('fonts/Lato-Semibold.woff') format('woff'),
+    url('fonts/Lato-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LatoThin';
+    src: url('fonts/Lato-Thin.eot');
+    src: url('fonts/Lato-Thin.eot') format('embedded-opentype'),
+    url('fonts/Lato-Thin.woff2') format('woff2'),
+    url('fonts/Lato-Thin.woff') format('woff'),
+    url('fonts/Lato-Thin.ttf') format('truetype');
+}
+
+html,body{
+    height:auto;
+    min-height: 100%;
+    font-family: LatoRegular;
+
+}
+.page{
+    background-image: url(../../app/img/notepad_pencil_notebook_7745_2560x1080.jpg);
+    height: auto;
+    min-height: 100%;
+    width:100%;
+    padding: 50px;
+}
+.panel{
+    background-color:rgba(255,255,255,0.88);
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    min-height: 100%;
+
+}
+
+.fa{
+    font-size: 20px;
+    margin: 10px;
+}
+.listBox{
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: solid 1px #efefef;
+    margin: 20px;
+    margin-left: 0px;
+    padding: 15px;
+}
+.task-button {
+    width: 155px;
+    height: 49.6px;
+    border-radius: 4px;
+    background-color: #fe8200;
+    border: 1px solid #fe8200;
+    line-height: 35px;
+    font-size: 18px;
+    color: #fff;
+    transition: 0.3s;
+    margin: 20px;
+    font-family: LatoRegular;
+    font-size: 19.4px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.task-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.task-button:link, .task-button:visited {
+    width: 155px;
+    height: 49.6px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #fe8200;
+    line-height: 35px;
+    font-size: 18px;
+    color: #fe8200;
+    transition: 0.3s;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.task-button:hover, .task-button:active {
+    background-color: #fff;
+    border: 1px solid #fe8200;
+    color: #fe8200;
+    outline: none;
+}
+
+.task-button:focus {
+    outline: none;
+}
+.cardBox{
+    background-color: #f5f5f5;
+    padding: 5px;
+    margin: 10px auto;
+    width:100%;
+    min-height: 50px;
+}
+.fa-check{
+    color: green;
+}
+md-input-container{
+    width:100%;
+}
+.md-select-menu-container {
+    z-index: 99999 !important;
+}
+
+.on-drag-enter{
+    background-color : #aaaaaa;
+}
+
+.on-drag-hover:before {
+    display: block;
+    color: white;
+    font-size: x-large;
+    font-weight: 800;
+}
