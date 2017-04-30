@@ -7,7 +7,7 @@ We can mark status on each card as done/ not done.
 Task status is reflected on the card to show if its completed or pending.
 ```
 
-[![App Preview](https://github.com/guptashipra7391/TaskManagement/blob/master/sample-image.png?raw=true)]
+![App Preview](https://github.com/guptashipra7391/TaskManagement/blob/master/sample-image.png?raw=true)
 
 
 ### Following features are implemented in this project
